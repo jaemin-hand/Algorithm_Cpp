@@ -1,9 +1,5 @@
-#include<stdio.h>
+#include<iostream>
 int main(void){
-    for(int i = 0 ; i < 10;i ++){
-
-        printf("hello hihi");
-    }
-
+    std::cout << "test";
     return 0;
 }
