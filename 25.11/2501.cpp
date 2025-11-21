@@ -8,12 +8,12 @@ int main() {
    vector<int> arr;
 
    for (int i = 1; i <= N; i++) {
-      if (i % N == 0) {
+      if (N % i == 0) {
          arr.push_back(i);
       }
    }
 
-   cout << arr[K];
+   cout << arr[K-1];
 
    return 0;
 }
