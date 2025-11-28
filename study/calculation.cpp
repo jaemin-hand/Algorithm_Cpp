@@ -84,6 +84,7 @@ int main() {
 		cout << " = " << f1_total << "/ 2" << endl;
 		cout << f1_total / 2 << " - " << f2_total / 2 << endl;
 		cout << " = " << (f1_total / 2) - (f2_total / 2) << endl;
+		cout << name2 << " 이가 " << name1 << " 에게" << (f1_total / 2) - (f2_total / 2) << "원을 보내세요" << endl;
 
 	}
 	else if (f1_total < f2_total) {
@@ -97,6 +98,7 @@ int main() {
 		cout << " = " << f2_total << "/ 2" << endl;
 		cout << f2_total / 2 << " - " << f1_total / 2 << endl;
 		cout << " = " << (f2_total / 2) - (f1_total / 2) << endl;
+		cout << name1 << " 이가 " << name2 << " 에게" << (f2_total / 2) - (f1_total / 2) << "원을 보내세요" << endl;
 	}
 
 	
