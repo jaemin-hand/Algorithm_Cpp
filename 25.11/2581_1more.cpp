@@ -28,7 +28,7 @@ int main() {
     if(v.size() > 0) {
         cout << accumulate(v.begin(),v.end(),0) << endl;
         cout << v[0];
-    }
+    } 
     else cout << -1;
 
     return 0;
