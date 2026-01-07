@@ -1,3 +1,4 @@
+// https://www.acmicpc.net/problem/1018
 // 문제
 // 지민이는 자신의 저택에서 MN개의 단위 정사각형으로 나누어져 있는 M×N 크기의 보드를 찾았다.
 // 어떤 정사각형은 검은색으로 칠해져 있고, 나머지는 흰색으로 칠해져 있다.
@@ -14,24 +15,41 @@
 #include<iostream>
 #include<vector>
 #include<string>
+#include<algorithm>
 using namespace std;
 int main() {
     freopen("../input.txt","r",stdin);
     int N = 0, M = 0;
     cin >> N >> M;
     vector<string> board(N);
-    for(int i = 0; i < N; i++) {
+    for(int i = 0 ; i < N; i++){
         cin >> board[i];
     }
 
+    int min_cnt = 64;
+    
+    for(int i = 0; i <= N - 8; i++){
+        for(int ii = 0; ii <= M - 8;ii++){
+            int cnt = 0;
+            for(int row = 0; row < 8; row++){
+                for(int col = 0; col < 8; col++){
+                    if((row + col) % 2 == 0) {
+                        if(board[i + row][ii + col] != 'W') cnt++;
+                    } else{
+                        if(board[i + row][ii + col] != 'B') cnt++;
+                    }
+                }
+            }
+            
+            int select_min = min(cnt, 64 - cnt);
 
-    for(int i = -0; i < N; i++){ // cin 검증
-        for(int ii = 0; ii < N; ii++){
-            cout << board[i][ii];
+            if(select_min < min_cnt) {
+                min_cnt = select_min;
+            }
         }
-        cout << endl;
     }
 
+    cout << min_cnt;
 
     return 0;
 }
