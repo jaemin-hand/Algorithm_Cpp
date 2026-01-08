@@ -1,0 +1,44 @@
+// https://www.acmicpc.net/problem/25305
+// 문제
+// 2022 연세대학교 미래캠퍼스 슬기로운 코딩생활에 
+// $N$명의 학생들이 응시했다.
+
+// 이들 중 점수가 가장 높은 
+// $k$명은 상을 받을 것이다.
+// 이 때, 상을 받는 커트라인이 몇 점인지 구하라.
+
+// 커트라인이란 상을 받는 사람들 중
+// 점수가 가장 가장 낮은 사람의 점수를 말한다.
+
+// 입력
+// 첫째 줄에는 응시자의 수 
+// N과 상을 받는 사람의 수 
+// k가 공백을 사이에 두고 주어진다.
+
+// 둘째 줄에는 각 학생의 점수 
+// x가 공백을 사이에 두고 주어진다.
+
+// 출력
+// 상을 받는 커트라인을 출력하라.
+
+#include<iostream>
+#include<vector>
+#include<algorithm>
+using namespace std;
+int main() {
+    freopen("../input.txt","r",stdin);
+    int N = 0, k = 0; // N 응시자 수  k 상받는 사람 수
+    cin >> N >> k;
+
+    vector<int> v;
+    for(int i = 0; i < N;i++){
+        int temp = 0;
+        cin >> temp;
+        v.push_back(temp);
+    }
+    
+    sort(v.begin(),v.end());
+    cout << v[N - k];
+
+    return 0;
+}
