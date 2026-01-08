@@ -24,22 +24,38 @@ int main() {
     int N = 0, M = 0;
     cin >> N >> M;
     vector<string> board(N);
-    for(int i = 0; i < N;i++){
+    for(int i = 0 ; i < N;i++){
         cin >> board[i];
     }
+
     
-    for(int i = 0; i <= N - 8; i++){
-        for(int ii = 0; ii <= M - 8; ii ++){
-            int min_cnt = 10000;
-            
-            for(int row = i; row < 8; row++){
-                for(int col = ii; col < 8; col++){
-                    
+    int min_cnt = 64;
+    for(int i = 0 ;i <= N - 8;i++){
+        for(int ii =0; ii <= M - 8;ii++){
+             // 최소 카운팅을 위한 변수
+            int cnt = 0;
+            for(int row = i; row < i + 8; row++){
+                for(int col = ii; col < ii + 8; col++){
+                    if((row + col) % 2 == 0) {
+                        if(board[row][col] != 'W') {
+                            cnt++;
+                        }
+                    } else{
+                        if(board[row][col] != 'B') {
+                            cnt++;
+                        }
                 }
+            }
+            
+        }
+        int current_min = min(cnt, 64 - cnt);
+
+            if(min_cnt > current_min) {
+                min_cnt = current_min;
             }
         }
     }
-
+    cout << min_cnt;
 
     return 0;
 }
