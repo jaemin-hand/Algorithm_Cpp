@@ -1,4 +1,4 @@
-https://www.acmicpc.net/problem/1181
+// https://www.acmicpc.net/problem/1181
 
 // 문제
 // 알파벳 소문자로 이루어진 N개의 단어가 들어오면
