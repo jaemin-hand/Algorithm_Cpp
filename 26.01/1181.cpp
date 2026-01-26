@@ -27,6 +27,7 @@ bool compare(string a, string b) {
         return a.length() < b.length();
     }
 }
+
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -35,18 +36,19 @@ int main() {
     cin >> N;
 
     vector<string> v(N);
-    for(int i = 0; i < N;i++){
+    for(int i = 0; i < N; i++){ 
         cin >> v[i];
     }
 
     sort(v.begin(),v.end(),compare);
 
-    v.erase(unique(v.begin(),v.end()),v.end());
+    // 중복 제거 (약간의 암기가 필요할듯)
+    // unique 는 중복되지 않은 원소들의 끝 다음 위치를 반환
+    // erase 는 그 위치부터 벡터의 실제 끝까지를 삭제..
+    v.erase(unique(v.begin(),v.end(),v.end()));
 
-    for(int i = 0; i < v.size(); i++) {
+    for(int i = 0; i < v.size(); i++){
         cout << v[i] << "\n";
     }
-
-
     return 0;
 }
