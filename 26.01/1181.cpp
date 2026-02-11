@@ -26,11 +26,13 @@ bool compare(string a, string b) {
     if(a.length() != b.length()) {
         return a.length() < b.length();
     }
+    return a < b;
 }
 
 int main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
+    freopen("../input.txt","r",stdin);
 
     int N = 0;
     cin >> N;
@@ -45,7 +47,7 @@ int main() {
     // 중복 제거 (약간의 암기가 필요할듯)
     // unique 는 중복되지 않은 원소들의 끝 다음 위치를 반환
     // erase 는 그 위치부터 벡터의 실제 끝까지를 삭제..
-    v.erase(unique(v.begin(),v.end(),v.end()));
+    v.erase(unique(v.begin(),v.end()),v.end());
 
     for(int i = 0; i < v.size(); i++){
         cout << v[i] << "\n";
