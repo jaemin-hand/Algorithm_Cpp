@@ -27,9 +27,12 @@ int main() {
     cin >> t_case;
     vector<int> v(t_case);
     vector<string> v_string(t_case);
-    for(int t = 0; t < t_case; t++){
-        
+    vector<int> flow_count(t_case);
+    for(int i = 0; i < t_case;i++) {
+        cin >> v[i] >> v_string[i];
+        flow_count[i] = i + 1;
     }
+    
 
 
     return 0;
